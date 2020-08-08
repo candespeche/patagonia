@@ -1,0 +1,72 @@
+@font-face {
+    font-family: AmsiPro-Ultra;
+    src: url(../../assets/fonts/AmsiPro-Ultra.otf);
+}
+@font-face {
+    font-family: AmsiProCond-Bold;
+    src: url(../../assets/fonts/AmsiProCond-Bold.otf);
+}
+
+.footer{
+    width: 100%;
+    padding-top: 5vh;
+}
+.row{
+    display: flex;
+    justify-content: center;
+}
+.squareGreen{
+    background-color: #163D34;
+    width: 33.4%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    padding: 8% 0;
+}
+.squareLightGreen{
+    background-color: #00473D;
+    width: 33.4%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    padding: 8% 0;
+
+}
+.circle{
+    width: 60px;
+    height: 60px;
+    border-style: solid;
+    border-radius: 40px;
+    border-width: 1pt;
+    border-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.terminos{
+    padding: 3vh 4vh;
+    background-color: #00584D;
+
+}
+
+.terminos h2{
+    font-family: AmsiPro-Ultra;
+    margin: 0;
+    padding-top: 1vh;
+    font-size: 13px;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+.terminos p{
+    font-family: AmsiProCond-Bold;
+    margin: 0;
+    padding-top: 1vh;
+    font-size: 15px;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+}

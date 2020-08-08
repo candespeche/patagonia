@@ -1,0 +1,177 @@
+@font-face {
+    font-family: AmsiPro-Ultra;
+    src: url(../../assets/fonts/AmsiPro-Ultra.otf);
+}
+@font-face {
+    font-family: ProximaNova-Regular;
+    src: url(../../assets/fonts/ProximaNova-Regular.otf);
+}
+@font-face {
+    font-family: ProximaNova-Bold;
+    src: url(../../assets/fonts/ProximaNovaBold.otf);
+}
+
+.registerContainer{
+    background-image: url("../../assets/background02.jpg");
+    height: 100%;
+    background-size: cover;
+}
+
+.pasosContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5vh 0;
+}
+.pasosCircle01{
+    width: 31px;
+    height: 31px;
+    border-style: solid;
+    border-radius: 30px;
+    border-width: 1.1pt;
+    border-color: rgb(145, 144, 144);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.pasosNumber01{
+    font-size: 14px;
+    text-align: center;
+    font-family: ProximaNova-Bold;
+    color: rgb(145, 144, 144);
+}
+.pasosLinea{
+    width: 26px;
+    height: 1px;
+    background-color: rgb(145, 144, 144);;
+    margin: 0 3px;
+}
+.pasosCircle02{
+    width: 31px;
+    height: 31px;
+    border-style: solid;
+    border-radius: 20px;
+    border-width: 1pt;
+    border-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.pasosNumber02{
+    font-size: 14px;
+    text-align: center;
+    font-family: ProximaNova-Bold;
+}
+
+.registerTitle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.registerTitleTxt{
+    margin: 0;
+    padding: 0;
+    font-family: AmsiPro-Ultra;
+    font-size: 24px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.registerTitleBkg{
+    background-image: url("../../assets/btnBkg@2x.png");
+    background-repeat: no-repeat;
+    width: 135px;
+}
+.registerTitleFoto{
+    font-family: AmsiPro-Ultra;
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: -0.5vh;
+}
+.inputContainer{
+    padding: 0 10%;
+}
+.input input{
+    border:none;
+    height: 40px;
+    width: calc(100% - 21px);
+    background-color: transparent;
+    margin: 0;
+}
+.input{
+    margin: 15px 0;
+    background-color: transparent;
+    font-size: 15px;
+    padding: 2px 12px;
+    border: solid 1px black;
+    cursor: pointer;
+    border-radius: 18px;
+    font-family: ProximaNova-Regular;
+}
+.optionsContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 25px;
+}
+.optionBtn{
+    border-color:#13492F;
+    border-width: 2px;
+    border-style: dashed;
+    border-radius: 15px;
+    width: 145px;
+    height: 100px;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.optionTxt{
+    text-align: center;
+    font-family: AmsiPro-Ultra;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin: 7px 0 0 0;
+}
+.btnContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttonEnviar{
+    background-color: #13492F;
+    width: 150px;
+    height: 40px;
+    border-radius: 12px;
+    margin-top: 25px;
+}
+
+.buttonEnviar:active{
+    background-color: #0d3321;
+    box-shadow: 0px 0px 12px 1px rgba(26,102,65,0.46);
+}
+
+.buttonEnviar p{
+    font-family: AmsiPro-Ultra;
+    color:white;
+    font-size: 14px;
+    line-height: 13px;
+    text-transform: uppercase;
+    text-align: center;
+}
+.checkContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20%;
+}
+.checkTxt{
+    font-family: ProximaNova-Regular;
+    font-size: 11px;
+    margin-left: 7px;
+}
