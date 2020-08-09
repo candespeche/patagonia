@@ -1,0 +1,13 @@
+.successContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #00473D;
+}
+
+.successContainer img{
+    width: 150px;
+    margin-bottom: 13vh;
+}

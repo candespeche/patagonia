@@ -100,6 +100,9 @@
     background-color: transparent;
     margin: 0;
 }
+.input input:focus{
+    outline: none;
+}
 .input{
     margin: 15px 0;
     background-color: transparent;
@@ -114,15 +117,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 40px;
-    margin-bottom: 25px;
+    margin-top: 20px;
+    margin-bottom: 35px;
 }
 .optionBtn{
     border-color:#13492F;
     border-width: 2px;
     border-style: dashed;
     border-radius: 15px;
-    width: 145px;
+    width: 140px;
     height: 100px;
     margin: 5px;
     display: flex;
@@ -130,6 +133,7 @@
     align-items: center;
     justify-content: center;
 }
+
 .optionTxt{
     text-align: center;
     font-family: AmsiPro-Ultra;
@@ -168,10 +172,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 20%;
+    padding: 0 15% 0 18%;
 }
 .checkTxt{
     font-family: ProximaNova-Regular;
-    font-size: 11px;
+    font-size: 12px;
     margin-left: 7px;
+}
+
+button {
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+}
+input[type="file"] {
+    display: none;
+  }
+.btnGaleria{
+    margin-top: 10px;
 }
