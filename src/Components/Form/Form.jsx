@@ -6,9 +6,11 @@ import galery from "../../assets/galery.svg"
 import Camera, { FACING_MODES, IMAGE_TYPES } from 'react-html5-camera-photo';
 import 'react-html5-camera-photo/build/css/index.css';
 
-function Form({ name, setName, birth, setBirth, ticket, setTicket, email, setEmail, image, setImage, camera, setCamera, handleCameraError, handleTakePhoto, handleSubmit, handleTakePhotoAnimationDone, handleImageUpload }) {
+function Form({ handleSubmit, error, terms, setTerms, name, setName, birth, setBirth, ticket, setTicket, email, setEmail, camera, setCamera, handleCameraError, handleTakePhoto, handleTakePhotoAnimationDone, handleImageUpload }) {
+
+    console.log(error, "ERROR")
     return (
-        <div className={style.registerContainer}>
+        < div className={style.registerContainer} >
             <div className={style.pasosContainer}>
                 <div className={style.pasosCircle01}>
                     <p className={style.pasosNumber01}>01</p>
@@ -26,85 +28,95 @@ function Form({ name, setName, birth, setBirth, ticket, setTicket, email, setEma
             </div>
             <div className={style.inputContainer}>
                 <form className={style.input}>
-                    <input type="text" name="nombre" placeholder="Nombre" className={style.input} value={name} onChange={event => setName(event.target.value)} />
+                    <input type="text" label="nombre" placeholder="Nombre" className={style.input} value={name} onChange={event => setName(event.target.value)} />
                 </form>
                 <form className={style.input}>
-                    <input type="calendar" name="nacimiento" placeholder="Fecha de Nacimiento" className={style.input} value={birth} onChange={event => setBirth(event.target.value)} />
+                    <input type="calendar" label="nacimiento" placeholder="Fecha de Nacimiento" className={style.input} value={birth} onChange={event => setBirth(event.target.value)} />
                 </form>
                 <form className={style.input}>
-                    <input type="text" name="ticket" placeholder="Numero de ticket / Apodo" className={style.input} value={ticket} onChange={event => setTicket(event.target.value)} />
+                    <input type="text" label="ticket" placeholder="Numero de ticket / Apodo" className={style.input} value={ticket} onChange={event => setTicket(event.target.value)} />
                 </form>
                 <form className={style.input}>
-                    <input type="email" name="email" placeholder="Email" className={style.input} value={email} onChange={event => setEmail(event.target.value)} />
+                    <input type="email" label="email" placeholder="Email" className={style.input} value={email} onChange={event => setEmail(event.target.value)} />
                 </form>
             </div>
             <div className={style.optionsContainer}></div>
-            {camera ? (
-                <Camera
-                    onTakePhoto={dataUri => {
-                        handleTakePhoto(dataUri);
-                    }}
-                    onTakePhotoAnimationDone={dataUri => {
-                        handleTakePhotoAnimationDone(dataUri);
-                    }}
-                    onCameraError={error => {
-                        handleCameraError(error);
-                    }}
-                    idealFacingMode={FACING_MODES.ENVIRONMENT}
-                    idealResolution={{ width: 640, height: 480 }}
-                    imageType={IMAGE_TYPES.JPG}
-                    imageCompression={0.97}
-                    isMaxResolution={false}
-                    isImageMirror={false}
-                    isSilentMode={false}
-                    isDisplayStartCameraError={true}
-                    isFullscreen={false}
-                    sizeFactor={1}
-                />
-            ) : (
-                    <div className={style.optionsContainer}>
-                        <div className={style.optionBtn} onClick={() => setCamera(true)}>
-                            <img src={camera01} alt="camera" />
-                            <p className={style.optionTxt}>Tomar foto</p>
-                        </div>
+            {
+                camera ? (
+                    <Camera
+                        onTakePhoto={dataUri => {
+                            handleTakePhoto(dataUri);
+                        }}
+                        onTakePhotoAnimationDone={dataUri => {
+                            handleTakePhotoAnimationDone(dataUri);
+                        }}
+                        onCameraError={error => {
+                            handleCameraError(error);
+                        }}
+                        idealFacingMode={FACING_MODES.ENVIRONMENT}
+                        idealResolution={{ width: 640, height: 480 }}
+                        imageType={IMAGE_TYPES.JPG}
+                        imageCompression={0.97}
+                        isMaxResolution={false}
+                        isImageMirror={false}
+                        isSilentMode={false}
+                        isDisplayStartCameraError={true}
+                        isFullscreen={false}
+                        sizeFactor={1}
+                    />
+                ) : (
+                        <div className={style.optionsContainer}>
+                            <div className={style.optionBtn} onClick={() => setCamera(true)}>
+                                <img src={camera01} alt="camera" />
+                                <p className={style.optionTxt}>Tomar foto</p>
+                            </div>
 
-                        <button
-                            className={style.optionBtn}
-                            type="file"
-                            accept="image/*"
-                            onChange={event => handleImageUpload(event)}
-                        >
-                            <label htmlFor="file-upload">
-                                <div className={style.btnGaleria}>
-                                    <img
-                                        src={galery}
-                                        alt="Upload image"
+                            <button
+                                className={style.optionBtn}
+                                type="file"
+                                accept="image/*"
+                                onChange={event => handleImageUpload(event)}
+                            >
+                                <label htmlFor="file-upload">
+                                    <div className={style.btnGaleria}>
+                                        <img
+                                            src={galery}
+                                            alt="Upload image"
+                                        />
+                                        <p className={style.optionTxt}>Abrir galeria</p>
+                                    </div>
+                                    <input
+                                        id="file-upload"
+                                        type="file"
+                                        accept="image/*"
+                                        onChange={event => handleImageUpload(event)}
                                     />
-                                    <p className={style.optionTxt}>Abrir galeria</p>
-                                </div>
-                                <input
-                                    id="file-upload"
-                                    type="file"
-                                    accept="image/*"
-                                    onChange={event => handleImageUpload(event)}
-                                />
-                            </label>
-                        </button>
-                    </div>
-                )}
+                                </label>
+                            </button>
+                        </div>
+                    )
+            }
+
             <div className={style.checkContainer}>
-                <input type="checkbox" id="ok" name="radio" />
+                <input type="checkbox" id="ok" name="radio" onClick={() => setTerms(!terms)} />
                 <label htmlFor="ok" className={style.checkTxt}>
                     He leído y acepto bases y condiciones, políticas de privacidad y activaciones de marketing.
                 </label>
             </div>
+
+            {error.length ? (
+                <div className={style.errorContainer}>
+                    <p className={style.errorTxt}>{error}</p>
+                </div>
+            ) : null
+            }
             <div className={style.btnContainer} onClick={() => handleSubmit()}>
                 <div className={style.buttonEnviar}>
                     <p>Enviar</p>
                 </div>
             </div>
             <Footer />
-        </div>
+        </div >
     );
 }
 

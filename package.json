@@ -9,6 +9,7 @@
     "browser-image-compression": "^1.0.12",
     "firebase": "^7.17.2",
     "firebase-admin": "^9.0.0",
+    "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-html5-camera-photo": "^1.5.4",

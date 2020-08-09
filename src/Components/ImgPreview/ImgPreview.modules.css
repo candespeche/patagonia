@@ -1,0 +1,21 @@
+.demoImagePreview {
+    position: relative;
+    text-align: center;
+  }
+  
+  .demo-image-demoImagePreview > img {
+    width: 768px;
+  }
+  
+  @media (max-width: 768px) {
+    .demoImagePreview > img {
+      width: 100%;
+    }
+  }
+  
+  /* fullscreen enable by props */
+  .demoImagePreviewfullscreen > img {
+    width: 100vw;
+    height: 100vh;
+  }
+  
